@@ -2,12 +2,14 @@ import "dotenv/config";
 import "./update-db";
 
 import express from "express";
+import cors from "cors";
 import { db } from "./db";
 import { Article } from "./db/schema";
 import { gt, eq, sql, and, desc, SQLWrapper } from "drizzle-orm";
 
 const app = express();
 app.use(express.json());
+app.use(cors({ origin: process.env.CORS_ORIGIN ?? "*" }));
 
 app.get("/", (_, res) => {
   res.send("Hello World");

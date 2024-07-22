@@ -36,7 +36,6 @@ function setUpdateInterval({
     console.log(
       `Found ${newArticles.length} new articles from ${label}. Adding them to the db...`,
     );
-    console.log(newArticles);
 
     try {
       await db.insert(Article).values(newArticles);
