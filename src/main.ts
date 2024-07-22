@@ -1,5 +1,5 @@
 import "dotenv/config";
-// import "./update-db";
+import "./update-db";
 
 import express from "express";
 import { db } from "./db";
