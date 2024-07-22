@@ -1,0 +1,1 @@
+ALTER TABLE "article" ALTER COLUMN "createdOn" SET DATA TYPE timestamp;
