@@ -15,7 +15,7 @@ app.get("/", (_, res) => {
   res.send("Hello World");
 });
 
-app.get("/api/last-week", async (req, res) => {
+app.post("/api/last-week", async (req, res) => {
   const { source } = req.body;
 
   const filters: SQLWrapper[] = [
@@ -34,7 +34,7 @@ app.get("/api/last-week", async (req, res) => {
   else res.status(404).send("No news found");
 });
 
-app.get("/api/last-48h", async (req, res) => {
+app.post("/api/last-48h", async (req, res) => {
   const { source } = req.body;
 
   const filters: SQLWrapper[] = [
@@ -53,7 +53,7 @@ app.get("/api/last-48h", async (req, res) => {
   else res.status(404).send("No news found");
 });
 
-app.get("/api/last-24h", async (req, res) => {
+app.post("/api/last-24h", async (req, res) => {
   const { source } = req.body;
 
   const filters: SQLWrapper[] = [
@@ -72,7 +72,7 @@ app.get("/api/last-24h", async (req, res) => {
   else res.status(404).send("No news found");
 });
 
-app.get("/api/last-hour", async (req, res) => {
+app.post("/api/last-hour", async (req, res) => {
   const { source } = req.body;
 
   const filters: SQLWrapper[] = [
